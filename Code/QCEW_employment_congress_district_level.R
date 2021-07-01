@@ -1,14 +1,26 @@
+### ----------------------------------
+###                                                                          
+### Quarterly Census of Employment and Wages employment (QCEW) county level data    
+### extraction depending on NAICS industry and aggregation to Congressional 
+### district level (for the years 2003 to 2018)                                                             
+###
+### Author: Mirjam Nanko
+### Email: m.nanko@exeter.ac.uk
+### Date: July 1, 2021
+###
+### ----------------------------------
+
 library(readxl)     # read excel files
 library(haven)      # read .dta files
 library(tidyverse)  # data handling
-library(magrittr)   # piping
+library(magrittr)   # advanced piping
 library(stringr)    # text data handling
 library(psych)      # describe data
 
 #-------------------------------------------------------------------------------
-# This script loads and aggregates the  Quarterly Census of Employment and Wages 
-# (QCEW) annual US county level employment data to the Congressional district 
-# level for the 108th to 115th Congress (2003 - 2018).
+# This script loads and aggregates the Quarterly Census of Employment and Wages 
+# (QCEW) annual US county level employment data by NAICS industry to the 
+# Congressional district level for the 108th to 115th Congress (2003 - 2018).
 # Data Source: CSVs By Industry - Annual Averages: 
 # https://www.bls.gov/cew/downloadable-data-files.htm)
 # 
@@ -16,7 +28,7 @@ library(psych)      # describe data
 # (A) loads the county level annual average employment numbers for a specified 
 #     range of years (in this example: 2003 to 2010) and industries classified
 #     by NAICS industry codes (e.g. 10 Total, all industries; 21 Mining, 
-#     quarrying, and oil and gas extraction; 211 Oil and gas extraction) 
+#     quarrying, and oil and gas extraction; 211 Oil and gas extraction) ,
 #     NAICS codes: 
 #     https://www.bls.gov/cew/classifications/industry/industry-titles.htm
 # (B) aggregates the data to the 108th Congress congressional district level 
@@ -84,6 +96,7 @@ years <- c(2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010)
 # digit designates the industry group, the fifth digit designates the NAICS 
 # industry, and the sixth digit designates the national industry."
 # (Source: https://www.census.gov/naics/)
+# 
 # See list of "QCEW Industry Codes and Titles (For NAICS Coded Data)":
 # https://www.bls.gov/cew/classifications/industry/industry-titles.htm
 # 
