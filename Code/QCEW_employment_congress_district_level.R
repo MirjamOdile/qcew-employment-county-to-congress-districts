@@ -54,6 +54,7 @@ library(psych)      # describe data
 #   These can be downloaded here: https://www.ddorn.net/data.htm
 # 
 setwd("~/Data/")
+### <<
 
 #-------------------------------------------------------------------------------
 # (A) Load Quarterly Census of Employment and Wages (QCEW) annual US county 
@@ -66,10 +67,12 @@ setwd("~/Data/")
 # are saved (absolute filepath or relative to working directory)
 # 
 directory = "QCEW/"
+### <<
 
 ### >> Step 3: Define relevant years (between 2003 and 2018) ###
 # 
 years <- c(2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010)
+### <<
 
 ### >> Step 4: Define relevant industry NAICS codes ###
 # 
@@ -93,11 +96,13 @@ years <- c(2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010)
 # https://www.bls.gov/cew/classifications/industry/2017-naics-hierarchy-crosswalk.htm
 # 
 NAICS <- 
-  c("10", # Total
-    "21", "211", "2121", "213111", "213112", "213113", # Fossil fuel mining
-    "22"," 221112", # Fossil fuel electric power generation
-    "2212", # Natural gas distribution
-    "486") # Pipeline transportation
+  c("10",                                        # Total
+    "211", "2121", "213111", "213112", "213113", # Fossil fuel mining
+    "221112",                                    # Fossil fuel power generation
+    "2212",                                      # Natural gas distribution
+    "486"                                        # Pipeline transportation
+    )
+### <<
 
 
 # Load the data 
@@ -149,6 +154,7 @@ NAICS.codebook <- QCEW.counties[,c("industry_code", "industry_title")] %>%
   mutate(industry_code_long = str_pad(industry_code, 6, "right", pad = "0")) %>%
   arrange(industry_code_long)
 
+
 ### >> Step 5: Check result and filter correct observations ###
 # 
 # Check that the required industries have been loaded
@@ -156,13 +162,12 @@ NAICS.codebook
 # In case the NAICS code has changed for any of the required industries, some 
 # years will have zero observations for the affected industry. The following
 # table displays the number of loaded observations for each industry and year.
-# If there are zero observations for some of the years, this is a strong 
-# indicator that the NAICS code for this industries may have changed at some
-# point. 
+# If there are zero observations for some year, this is a strong indicator that 
+# the NAICS code for this industry may have changed at some point. 
 QCEW.counties %>% 
   select(year, industry_code, industry_title, annual_avg_emplvl) %$% 
   table(year, industry_title)
-
+### <<
 
 #-------------------------------------------------------------------------------
 # (B) Match the geocorr congressional district crosswalk file to data and
@@ -213,10 +218,11 @@ QCEW.counties[str_detect(QCEW.counties$county, "^78"), ] <- QCEW.counties %>%
   filter(str_detect(county, "^78")) %>% 
   mutate(state = "78", cd_code = "01", stab = "VI", afact = 1,
          cntyname = str_replace(area_title, ", Virgin Islands", " VI"))
-# Check that no district level information is missing anymore
+# Check that all missing district level information has been replaced
 QCEW.counties[is.na(QCEW.counties$state), 1:9] %>% 
   select(state, stab, cd_code, cntyname, afact, area_title) %>% 
   unique()
+### <<
 
 # Inspect data
 describe(QCEW.counties, skew = F)
