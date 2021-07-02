@@ -10,7 +10,7 @@ The `QCEW_employment_state_level.R` code loads the QCEW state level employment d
 
 Three data sources are used:
 
-1. `QCEW county level employment data` (CSVs By Industry - Annual Averages). The data can be downloaded here: https://www.bls.gov/cew/downloadable-data-files.htm)
+1. `QCEW county level employment data` (CSVs By Industry - Annual Averages). The data can be downloaded here: https://www.bls.gov/cew/downloadable-data-files.htm
 
     Source: U.S. Department of Labor. Bureau of Labor Statistics (2021) _Quarterly Census of Employment and Wages_.
 
