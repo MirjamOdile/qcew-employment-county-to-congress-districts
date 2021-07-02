@@ -1,8 +1,8 @@
 ### ----------------------------------
 ###                                                                          
-### Quarterly Census of Employment and Wages employment (QCEW) county level data    
-### extraction depending on NAICS industry and aggregation to Congressional 
-### district level (for the years 2003 to 2018)                                                             
+### Aggregation of annual US county level employment data from the Quarterly 
+### Census of Employment and Wages (QCEW) by industry (NAICS) to the 
+### Congressional district level for the 108th to 115th Congress (2003 - 2018)                                                            
 ###
 ### Author: Mirjam Nanko
 ### Email: m.nanko@exeter.ac.uk
