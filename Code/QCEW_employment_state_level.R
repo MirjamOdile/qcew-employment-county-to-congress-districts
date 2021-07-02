@@ -1,6 +1,6 @@
 ### ----------------------------------
 ###                                                                          
-### Extraction for annual US state level employment data from the Quarterly 
+### Extraction of annual US state level employment data from the Quarterly 
 ### Census of Employment and Wages (QCEW) by industry (NAICS)                                                             
 ###
 ### Author: Mirjam Nanko
@@ -126,7 +126,7 @@ for (folder.name in folder.names) {
 
 # Filter the relevant observations
 QCEW.states <- QCEW.states %>% 
-  # Subset county level data 
+  # Subset state level data 
   # See list of "QCEW Aggregation Level Codes":
   # https://www.bls.gov/cew/classifications/aggregation/agg-level-titles.htm
   filter(agglvl_title %in% 
@@ -138,8 +138,7 @@ QCEW.states <- QCEW.states %>%
              "State, NAICS 4-digit -- by ownership sector",
              "State, NAICS 5-digit -- by ownership sector",
              "State, NAICS 6-digit -- by ownership sector")) %>%
-  # Remove observations that have "unknown or undefined" county information
-  filter(str_detect(area_fips, "999$") != T) %>% 
+  # Remove " -- Statewide" from state name
   mutate(area_title = str_replace(area_title, " -- Statewide", ""))
 
 
