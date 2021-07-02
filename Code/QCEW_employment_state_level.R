@@ -1,7 +1,7 @@
 ### ----------------------------------
 ###                                                                          
-### Quarterly Census of Employment and Wages employment (QCEW) state level data    
-### extraction depending on NAICS industry                                                              
+### Extraction for annual US state level employment data from the Quarterly 
+### Census of Employment and Wages (QCEW) by industry (NAICS)                                                             
 ###
 ### Author: Mirjam Nanko
 ### Email: m.nanko@exeter.ac.uk

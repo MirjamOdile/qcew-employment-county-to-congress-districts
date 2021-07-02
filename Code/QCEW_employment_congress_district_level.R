@@ -16,7 +16,7 @@ library(tidyverse)  # data handling
 library(magrittr)   # advanced piping
 library(stringr)    # text data handling
 library(psych)      # describe data
-
+git
 #-------------------------------------------------------------------------------
 # This script loads and aggregates the Quarterly Census of Employment and Wages 
 # (QCEW) annual US county level employment data by NAICS industry to the 
