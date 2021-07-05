@@ -165,8 +165,8 @@ QCEW.states %>%
 
 
 #-------------------------------------------------------------------------------
-# (B) Aggregate the data by to ignore ownership level and pivot it to wide
-#     format
+# (B) Aggregate the state employment data by ignoring the ownership level and 
+#     pivot it to wide format
 #-------------------------------------------------------------------------------
 
 # Aggregate the state data
