@@ -109,11 +109,12 @@ years <- c(2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010)
 # https://www.bls.gov/cew/classifications/industry/2017-naics-hierarchy-crosswalk.htm
 # 
 NAICS <- 
-  c("10",                                        # Total
-    "211", "2121", "213111", "213112", "213113", # Fossil fuel mining
-    "221112",                                    # Fossil fuel power generation
-    "2212",                                      # Natural gas distribution
-    "486"                                        # Pipeline transportation
+  c("10",                          # Total
+    "211", "2121",                 # Fossil fuel mining
+    "213111", "213112", "213113",  # Support activities for fossil fuel mining
+    "221112",                      # Fossil fuel power generation
+    "2212",                        # Natural gas distribution
+    "486"                          # Pipeline transportation
     )
 ### <<
 
