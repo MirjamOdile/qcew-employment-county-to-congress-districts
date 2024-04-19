@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+authors:
+  - family-names: Nanko
+    given-names: Mirjam O.
+    orcid: https://orcid.org/0000-0003-2503-5536
+title: "QCEW Annual Averages by Industry - data aggregation from county to congressional district or state level accounting for redistricting."
+version: 1
+date-released: 2021-07-05
