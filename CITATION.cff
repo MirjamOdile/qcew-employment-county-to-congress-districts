@@ -7,3 +7,4 @@ authors:
 title: "QCEW Annual Averages by Industry - data aggregation from county to congressional district or state level accounting for redistricting."
 version: 1
 date-released: 2021-07-05
+url: "https://github.com/MirjamOdile/qcew-employment-county-to-congress-districts"
